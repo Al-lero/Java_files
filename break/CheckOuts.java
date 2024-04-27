@@ -16,7 +16,7 @@ double billTotal = 0;
 double balance = 0;
 int amountPaid = 0;
 double result = 0;
-		
+
 
 			ArrayList<Object> items = new ArrayList<>();
 
@@ -43,7 +43,7 @@ double result = 0;
 
                 result = (quantity * price); 
 		subTotal += result;
-		discount = (subTotal * discount) / 100;
+		
 		VAT = (subTotal * 17.50) / 100;
 		billTotal = subTotal + VAT - discount;
 		balance = amountPaid - billTotal;
@@ -60,7 +60,7 @@ double result = 0;
 	
 			System.out.println("How much discount will he get?: ");
 			discount = scanner.nextDouble();
-			
+			discount = (subTotal * discount) / 100;
 			String prompt = """
 					WELCOME TO SEMICOLON STORE
 					MAIN BRANCH
