@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-	public class School {
+	public class Schools {
 
 		public static void main(String[] args) {
 			Scanner scanner = new Scanner(System.in);
@@ -43,9 +43,74 @@ String student;
 					}
 				
 			
-				}
+	}
 			listOfScores.add(arrayOfScores);
-
-				}
-		}
+	
 }
+
+		
+	ArrayList<double[]> listPerStudent= new ArrayList<>();
+		for(int[] listScore : listOfScores) {
+			double[] newScoresArray = new double [listScore.length+3];
+			for ( int j = 0; j < listScore.length; j++) {
+				newScoresArray[j]=listScore[j];
+					
+		}
+		newScoresArray[listScore.length]= Schools.totalNumber(listScore);
+		newScoresArray[listScore.length+1]= Schools.averageScore(listScore);
+		newScoresArray[listScore.length+2]= 0;
+		listPerStudent.add(newScoresArray);
+
+
+	}
+	for(double[] listScore: listPerStudent ) {
+	System.out.println(Arrays.toString(listScore));
+	}
+
+}
+
+
+		public static int totalNumber(int[] numbers){
+	
+		int totalNumber = 0;
+
+		for(int i = 0; i < numbers.length; i++){ 
+			totalNumber += numbers[i];
+
+			}
+
+	return totalNumber;
+
+			}
+
+		public static double averageScore(int[] numbers){
+	
+		double averageScore = 0;
+
+		for(int i = 0; i < numbers.length; i++){ 
+		
+			averageScore += numbers[i];
+
+			}
+			averageScore = averageScore / numbers.length;
+
+	return averageScore;
+
+			}
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+		
